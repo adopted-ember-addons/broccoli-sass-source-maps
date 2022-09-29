@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "release-it": "^14.2.1",
-    "release-it-lerna-changelog": "^3.1.0"
+    "release-it-lerna-changelog": "^5.0.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
