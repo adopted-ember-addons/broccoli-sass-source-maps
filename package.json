@@ -27,7 +27,7 @@
     "rsvp": "^4.8.5"
   },
   "devDependencies": {
-    "release-it": "^14.2.1",
+    "release-it": "^15.4.3",
     "release-it-lerna-changelog": "^5.0.0"
   },
   "publishConfig": {
