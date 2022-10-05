@@ -1,12 +1,8 @@
 var path = require('path');
-var mkdirp = require('mkdirp');
 var includePathSearcher = require('include-path-searcher');
 var CachingWriter = require('broccoli-caching-writer');
-var assign = require('object-assign');
-var rsvp = require('rsvp');
-var Promise = rsvp.Promise;
 var fs = require('fs');
-var writeFile = rsvp.denodeify(fs.writeFile);
+var rsvp = require('rsvp');
 
 module.exports = function(sass) {
   SassCompiler.prototype = Object.create(CachingWriter.prototype);
@@ -95,7 +91,7 @@ module.exports = function(sass) {
       sourceMapFile = destFile + '.map';
     }
 
-    mkdirp.sync(path.dirname(destFile));
+    fs.mkdirSync(path.dirname(destFile), { recursive: true });
 
     if (this.useRender) {
       var sassOptions = {
@@ -104,15 +100,15 @@ module.exports = function(sass) {
         outFile: destFile
       };
 
-      assign(sassOptions, this.sassOptions);
+      Object.assign(sassOptions, this.sassOptions);
       
       return this.renderSass(sassOptions).then(function(result) {
         var files = [
-          writeFile(destFile, result.css)
+          fs.promises.writeFile(destFile, result.css)
         ];
 
         if (this.sassOptions.sourceMap && !this.sassOptions.sourceMapEmbed) {
-          files.push(writeFile(sourceMapFile, result.map));
+          files.push(fs.promises.writeFile(sourceMapFile, result.map));
         }
         return Promise.all(files);
       }.bind(this)).catch(rethrowBuildError);
@@ -124,15 +120,15 @@ module.exports = function(sass) {
       outFile: destFile
     };
 
-    assign(sassOptions, this.sassOptions);
+    Object.assign(sassOptions, this.sassOptions);
 
     return this.renderSass(sassOptions.file, sassOptions).then(function(result) {
       var files = [
-        writeFile(destFile, result.css)
+        fs.promises.writeFile(destFile, result.css)
       ];
 
       if (this.sassOptions.sourceMap && !this.sassOptions.sourceMapEmbed) {
-        files.push(writeFile(sourceMapFile, JSON.stringify(result.sourceMap)));
+        files.push(fs.promises.writeFile(sourceMapFile, JSON.stringify(result.sourceMap)));
       }
 
       return Promise.all(files);
