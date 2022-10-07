@@ -1,3 +1,18 @@
+
+## v4.1.0 (2022-10-07)
+
+#### :rocket: Enhancement
+* [#32](https://github.com/adopted-ember-addons/broccoli-sass-source-maps/pull/32) upgrade to latest sass ([@patricklx](https://github.com/patricklx))
+
+#### :house: Internal
+* [#43](https://github.com/adopted-ember-addons/broccoli-sass-source-maps/pull/43) modernize ([@patricklx](https://github.com/patricklx))
+* [#35](https://github.com/adopted-ember-addons/broccoli-sass-source-maps/pull/35) add dependabot ([@patricklx](https://github.com/patricklx))
+* [#34](https://github.com/adopted-ember-addons/broccoli-sass-source-maps/pull/34) add release-it process ([@patricklx](https://github.com/patricklx))
+
+#### Committers: 1
+- Patrick Pircher ([@patricklx](https://github.com/patricklx))
+
+
 # master
 
 * **Breaking change**: This plugin now requires users to explicitly specify which Sass implementation to use when `requiring()` the module. For example:
