@@ -53,7 +53,7 @@ var outputTree = compileSass(inputTrees, inputFile, outputFile, {fiber: Fiber});
 
 * **`options`**: An optional hash of options for libsass and caching writer. 
   * Supported Sass options are:
-  `functions`, `indentedSyntax`, `omitSourceMapUrl`, `outputStyle`, `precision`,
+  `functions`, `indentedSyntax`, `omitSourceMapUrl`, `outputStyle`, `precision`, `quietDeps` (Dart Sass only),
   `sourceComments`, `sourceMap`, `sourceMapEmbed`, and `sourceMapContents`.
   * Options for caching writer include: `annotation`, `cacheInclude`, and `cacheExclude` (see details [here][bcw-options]).
 
