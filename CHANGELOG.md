@@ -1,4 +1,18 @@
 
+
+## v4.2.0 (2023-08-14)
+
+#### :rocket: Enhancement
+* [#52](https://github.com/adopted-ember-addons/broccoli-sass-source-maps/pull/52) Allow setting the quietDeps flag if desired ([@acorncom](https://github.com/acorncom))
+
+#### :house: Internal
+* [#54](https://github.com/adopted-ember-addons/broccoli-sass-source-maps/pull/54) Bump release-it from 15.9.3 to 16.1.4 ([@dependabot[bot]](https://github.com/apps/dependabot))
+* [#51](https://github.com/adopted-ember-addons/broccoli-sass-source-maps/pull/51) Bump release-it from 15.5.0 to 15.9.3 ([@dependabot[bot]](https://github.com/apps/dependabot))
+
+#### Committers: 1
+- David Baker ([@acorncom](https://github.com/acorncom))
+
+
 ## v4.1.0 (2022-10-07)
 
 #### :rocket: Enhancement
