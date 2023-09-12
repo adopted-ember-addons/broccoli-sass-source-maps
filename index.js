@@ -58,7 +58,8 @@ module.exports = function(sass) {
       quietDeps: options.quietDeps,
       sourceComments: options.sourceComments,
       sourceMap: options.sourceMap,
-      sourceMapIncludeSources: options.sourceMapEmbed,
+      sourceMapEmbed: options.sourceMapEmbed,
+      sourceMapIncludeSources: options.sourceMapIncludeSources,
       sourceMapContents: options.sourceMapContents,
       sourceMapRoot: options.sourceMapRoot,
       fiber: options.fiber
@@ -95,6 +96,7 @@ module.exports = function(sass) {
 
     fs.mkdirSync(path.dirname(destFile), { recursive: true });
 
+    // old api
     if (this.useRender) {
       var sassOptions = {
         file: includePathSearcher.findFileSync(this.inputFile, this.inputPaths),
@@ -124,9 +126,19 @@ module.exports = function(sass) {
 
     Object.assign(sassOptions, this.sassOptions);
 
+    // new api
     return this.renderSass(sassOptions.file, sassOptions).then(function(result) {
+      let sourceMapComment = '';
+      if (this.sassOptions.sourceMap) {
+        if (this.sassOptions.sourceMapEmbed) {
+          sourceMapComment = '\n' + '/*# sourceMappingURL=data:application/json;base64,' + btoa(JSON.stringify(result.sourceMap)) + '*/';
+        } else {
+          const name = sourceMapFile.replaceAll('\\', '/').split('/').slice(-1)[0];
+          sourceMapComment = '\n' + '/*@ sourceMappingURL=' + name + '*/';
+        }
+      }
       var files = [
-        fs.promises.writeFile(destFile, result.css)
+        fs.promises.writeFile(destFile, result.css + sourceMapComment)
       ];
 
       if (this.sassOptions.sourceMap && !this.sassOptions.sourceMapEmbed) {
