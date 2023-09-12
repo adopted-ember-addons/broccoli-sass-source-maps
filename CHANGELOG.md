@@ -1,5 +1,15 @@
 
 
+
+## v4.2.1 (2023-09-12)
+
+#### :bug: Bug Fix
+* [#57](https://github.com/adopted-ember-addons/broccoli-sass-source-maps/pull/57) add sourcemap comment ([@patricklx](https://github.com/patricklx))
+
+#### Committers: 1
+- Patrick Pircher ([@patricklx](https://github.com/patricklx))
+
+
 ## v4.2.0 (2023-08-14)
 
 #### :rocket: Enhancement
