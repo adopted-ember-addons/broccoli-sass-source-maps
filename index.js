@@ -131,9 +131,9 @@ module.exports = function(sass) {
       let sourceMapComment = '';
       if (this.sassOptions.sourceMap) {
         if (this.sassOptions.sourceMapEmbed) {
-          sourceMapComment = '\n' + '//# sourceMappingURL=data:application/json;base64,' + btoa(JSON.stringify(result.sourceMap));
+          sourceMapComment = '\n' + '/*# sourceMappingURL=data:application/json;base64,' + btoa(JSON.stringify(result.sourceMap)) + '*/';
         } else {
-          sourceMapComment = '\n' + '//@ sourceMappingURL=' + sourceMapFile;
+          sourceMapComment = '\n' + '/*@ sourceMappingURL=' + sourceMapFile + '*/';
         }
       }
       var files = [
