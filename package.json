@@ -1,6 +1,6 @@
 {
   "name": "broccoli-sass-source-maps",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "description": "Libsass-based Sass compiler for Broccoli",
   "keywords": [
     "broccoli-plugin",

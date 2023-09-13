@@ -1,6 +1,16 @@
 
 
 
+
+## v4.2.2 (2023-09-13)
+
+#### :bug: Bug Fix
+* [#59](https://github.com/adopted-ember-addons/broccoli-sass-source-maps/pull/59) use regex replace instead of replaceAll ([@patricklx](https://github.com/patricklx))
+
+#### Committers: 1
+- Patrick Pircher ([@patricklx](https://github.com/patricklx))
+
+
 ## v4.2.1 (2023-09-12)
 
 #### :bug: Bug Fix
