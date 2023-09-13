@@ -133,7 +133,7 @@ module.exports = function(sass) {
         if (this.sassOptions.sourceMapEmbed) {
           sourceMapComment = '\n' + '/*# sourceMappingURL=data:application/json;base64,' + btoa(JSON.stringify(result.sourceMap)) + '*/';
         } else {
-          const name = sourceMapFile.replace(/\\\\/g, '/').split('/').slice(-1)[0];
+          const name = sourceMapFile.replace(/\\/g, '/').split('/').slice(-1)[0];
           sourceMapComment = '\n' + '/*@ sourceMappingURL=' + name + '*/';
         }
       }
