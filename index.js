@@ -59,7 +59,7 @@ module.exports = function(sass) {
       sourceComments: options.sourceComments,
       sourceMap: options.sourceMap,
       sourceMapEmbed: options.sourceMapEmbed,
-      sourceMapIncludeSources: options.sourceMapIncludeSources ?? true,
+      sourceMapIncludeSources: options.sourceMapIncludeSources === undefined ? true : options.sourceMapIncludeSources,
       sourceMapContents: options.sourceMapContents,
       sourceMapRoot: options.sourceMapRoot,
       fiber: options.fiber
