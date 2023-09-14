@@ -2,6 +2,16 @@
 
 
 
+
+## v4.2.3 (2023-09-14)
+
+#### :bug: Bug Fix
+* [#61](https://github.com/adopted-ember-addons/broccoli-sass-source-maps/pull/61) do not use nullish coalescing ([@patricklx](https://github.com/patricklx))
+
+#### Committers: 1
+- Patrick Pircher ([@patricklx](https://github.com/patricklx))
+
+
 ## v4.2.2 (2023-09-13)
 
 #### :bug: Bug Fix
