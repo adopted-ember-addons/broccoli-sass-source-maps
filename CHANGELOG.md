@@ -3,6 +3,16 @@
 
 
 
+
+## v4.2.4 (2023-09-16)
+
+#### :bug: Bug Fix
+* [#62](https://github.com/adopted-ember-addons/broccoli-sass-source-maps/pull/62) Use `Buffer.from` instead of `btoa` to maintain compatibility with Node 10 to 14 ([@jasonbekolay](https://github.com/jasonbekolay))
+
+#### Committers: 1
+- Jason Bekolay ([@jasonbekolay](https://github.com/jasonbekolay))
+
+
 ## v4.2.3 (2023-09-14)
 
 #### :bug: Bug Fix
