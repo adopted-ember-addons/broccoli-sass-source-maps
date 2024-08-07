@@ -4,6 +4,16 @@
 
 
 
+
+## v4.3.0 (2024-08-07)
+
+#### :rocket: Enhancement
+* [#66](https://github.com/adopted-ember-addons/broccoli-sass-source-maps/pull/66) Add Option to Silence Deprecations ([@jrjohnson](https://github.com/jrjohnson))
+
+#### Committers: 1
+- Jon Johnson ([@jrjohnson](https://github.com/jrjohnson))
+
+
 ## v4.2.4 (2023-09-16)
 
 #### :bug: Bug Fix
